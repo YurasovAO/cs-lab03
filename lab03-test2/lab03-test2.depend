@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1649685507 source:d:\lab_03\lab03-test2\test2.cpp
+	<iostream>
+	<cassert>
+	<vector>
+	"test2.h"
+
+1649685389 d:\lab_03\lab03-test2\test2.h
+	<vector>
+
