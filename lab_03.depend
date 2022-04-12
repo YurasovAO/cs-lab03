@@ -35,13 +35,13 @@
 1649655301 d:\lab_03\histogram.h
 	<vector>
 
-1649690196 source:d:\lab_03\main.cpp
+1649697165 source:d:\lab_03\main.cpp
 	"histogram.h"
 	<iostream>
 	<vector>
 	"svg.h"
 
-1649690137 d:\lab_03\svg.h
+1649697165 d:\lab_03\svg.h
 	<vector>
 	<string>
 

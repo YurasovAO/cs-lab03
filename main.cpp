@@ -57,18 +57,21 @@ int main()
     cerr << "Enter column count: ";
     cin >> bin_count;
 
-
-
+size_t X=1;
+size_t Y=1;
+size_t L=1;
 
 
 
     // Обработка данных
     double min = numbers[0];
     double max = numbers[0];
+    string stroke ="blue";
+    size_t wid =2;
     find_minmax(numbers,min,max);
     const auto bins=make_histigram(max,min,bin_count,numbers);
+    show_histogram_svg(bins,bin_count,stroke,wid,X,Y,L);
 
-    show_histogram_svg(bins);
 
     // Вывод данных
     return 0;
