@@ -82,9 +82,9 @@
 
         size_t hist_hight=bin_count*BIN_HEIGHT;
          cout<<"<line x1='"<<X<<"' y1='"<<s<<"' x2='"<<Y<<"' y2='"<<s<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
-         cout<<"<line x1='"<<Y<<"' y1='"<<s<<"' x2='"<<Y<<"' y2='"<<hist_hight+3+5<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
-         cout<<"<line x1='"<<Y<<"' y1='"<<hist_hight+3+5<<"' x2='"<<X<<"' y2='"<<hist_hight+3+5<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
-         cout<<"<line x1='"<<X<<"' y1='"<<hist_hight+3+5<<"' x2='"<<X<<"' y2='"<<s<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
+         cout<<"<line x1='"<<Y<<"' y1='"<<s<<"' x2='"<<Y<<"' y2='"<<hist_hight+4+5<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
+         cout<<"<line x1='"<<Y<<"' y1='"<<hist_hight+4+5<<"' x2='"<<X<<"' y2='"<<hist_hight+4+5<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
+         cout<<"<line x1='"<<X<<"' y1='"<<hist_hight+4+5<<"' x2='"<<X<<"' y2='"<<s<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
         svg_end();
            L=max_bin_width;
     }
