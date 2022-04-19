@@ -57,9 +57,7 @@ int main()
     cerr << "Enter column count: ";
     cin >> bin_count;
 
-size_t X=1;
-size_t Y=1;
-size_t L=1;
+
 
 
 
@@ -68,14 +66,26 @@ size_t L=1;
     double max = numbers[0];
     string stroke ="blue";
     size_t wid =2;
+    size_t X1=0;
+    size_t X2=0;
+    size_t hist_hight =0;
+    size_t s=1;
     find_minmax(numbers,min,max);
     const auto bins=make_histigram(max,min,bin_count,numbers);
-    show_histogram_svg(bins,bin_count,stroke,wid,X,Y,L);
-
-
-    // Вывод данных
+    show_histogram_svg(bins,bin_count,stroke,X1,X2 ,hist_hight,s ,wid);
+  svg_line2(X1,s,X2,s,"grey",wid,cout);
+  svg_line2(X2,s,X2,hist_hight,"grey",wid,cout);
+  svg_line2(X2,hist_hight,X1,hist_hight,"grey",wid,cout);
+  svg_line2 (X1,hist_hight,X1,s,"grey",wid,cout);
+  fin();
     return 0;
 }
+
+
+
+
+
+
 
 
 
