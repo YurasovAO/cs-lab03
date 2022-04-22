@@ -17,7 +17,7 @@ if(n!=0)
 }
 else
 {
-  abort();
+  exit(0);
 }
 }
 
