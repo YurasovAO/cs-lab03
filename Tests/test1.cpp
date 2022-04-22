@@ -22,7 +22,7 @@ void test2 ()
 string input;
 string input2;
 stringstream source (input);
-svg_line2(17,1,416,1,"grey",2,source);
+svg_line2(17,1,17,1,"grey",2,source);
 string expected_result="<line x1='17' y1='1' x2='17' y2='1' stroke='grey' stroke-width='2' stroke-dasharray = '10 10' />";
 
 getline(source,input2);
@@ -37,8 +37,8 @@ void test3 ()
 string input;
 string input2;
 stringstream source (input);
-svg_line2(17,1,416,1,"grey",2,source);
-string expected_result="<line x1='17' y1='1' x2='1705' y2='1' stroke='grey' stroke-width='2' stroke-dasharray = '10 10' />";
+svg_line2(90,1,1705,1,"grey",2,source);
+string expected_result="<line x1='90' y1='1' x2='1705' y2='1' stroke='grey' stroke-width='2' stroke-dasharray = '10 10' />";
 
 getline(source,input2);
 cout<<input2;
@@ -52,8 +52,8 @@ void test4 ()
 string input;
 string input2;
 stringstream source (input);
-svg_line2(17,1,416,1,"grey",2,source);
-string expected_result="<line x1='17' y1='1' x2='17' y2='3000' stroke='grey' stroke-width='2' stroke-dasharray = '10 10' />";
+svg_line2(1,1,1,3000,"grey",2,source);
+string expected_result="<line x1='1' y1='1' x2='1' y2='3000' stroke='grey' stroke-width='2' stroke-dasharray = '10 10' />";
 
 getline(source,input2);
 cout<<input2;
@@ -68,7 +68,7 @@ void test5 ()
 string input;
 string input2;
 stringstream source (input);
-svg_line2(17,1,416,1,"grey",2,source);
+svg_line2(0,0,0,0,"grey",2,source);
 string expected_result="<line x1='0' y1='0' x2='0' y2='0' stroke='grey' stroke-width='2' stroke-dasharray = '10 10' />";
 
 getline(source,input2);
@@ -82,8 +82,8 @@ void test6()
     string input;
 string input2;
 stringstream source (input);
-svg_line2(17,1,416,1,"grey",2,source);
-string expected_result="<line x1='0' y1='0' x2='0' y2='0' stroke='white' stroke-width='2' stroke-dasharray = '10 10' />";
+svg_line2(17,1,416,1,"white",2,source);
+string expected_result="<line x1='17' y1='1' x2='416' y2='1' stroke='white' stroke-width='2' stroke-dasharray = '10 10' />";
 
 getline(source,input2);
 cout<<input2;

@@ -19,18 +19,6 @@ assert(input2!=expected_result);
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 int main()
 {
 

@@ -7,3 +7,9 @@
 	<vector>
 	<string>
 
+1650637530 source:d:\users10\gigabyte\desktop\lab_03\tests\test1.cpp
+	"../svg.h"
+	<cassert>
+	<iostream>
+	<sstream>
+
