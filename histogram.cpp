@@ -1,4 +1,5 @@
 #include "histogram.h"
+#include <stdlib.h>
 void find_minmax(const vector <double> &numbers, double &min,double &max)
 { size_t n=numbers.size();
 if(n!=0)
@@ -13,6 +14,10 @@ if(n!=0)
             max = number;
         }
     }
+}
+else
+{
+  abort();
 }
 }
 

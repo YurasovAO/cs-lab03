@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1650640598 source:d:\users10\gigabyte\desktop\lab_03\histogram.cpp
+1650641528 source:d:\users10\gigabyte\desktop\lab_03\histogram.cpp
 	"histogram.h"
+	<stdlib.h>
 
 1649655301 d:\users10\gigabyte\desktop\lab_03\histogram.h
 	<vector>
