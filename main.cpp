@@ -62,8 +62,8 @@ int main()
 
 
     // Обработка данных
-    double min = numbers[0];
-    double max = numbers[0];
+    double min;
+    double max;
     string stroke ="blue";
     size_t wid =2;
     size_t X1=0;
