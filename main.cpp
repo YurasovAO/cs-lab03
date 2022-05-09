@@ -3,6 +3,7 @@
 #include <vector>
 #include "svg.h"
 #include <curl/curl.h>
+#include <stdlib.h>
 using namespace std;
 
 vector<double>input_numbers(size_t count);
@@ -90,7 +91,7 @@ int main(int argc, char* argv[])
             CURLcode res;
             curl_easy_setopt(curl, CURLOPT_URL, argv[1]);
             res = curl_easy_perform(curl);
-            if(res!=0)
+            if(!CURLE_OK)
             {
                  curl_easy_strerror(res);
                  exit(1);
