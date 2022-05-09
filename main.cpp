@@ -81,7 +81,8 @@ vector <size_t>  make_histigram(Input input)
 
 
 int main(int argc, char* argv[])
-{    if(argc>1)
+{    curl_global_init(CURL_GLOBAL_ALL);
+    if(argc>1)
           {
             CURL *curl = curl_easy_init();
             if(curl)
@@ -98,7 +99,7 @@ int main(int argc, char* argv[])
             }
           }
 
-    curl_global_init(CURL_GLOBAL_ALL);
+
     const auto input=read_input(cin,true);
     const auto bins=make_histigram(input);
     show_histogram_svg(bins);
