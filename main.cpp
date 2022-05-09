@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "svg.h"
+#include <curl/curl.h>
 using namespace std;
 
 vector<double>input_numbers(size_t count);
@@ -81,6 +82,7 @@ vector <size_t>  make_histigram(Input input)
 
 int main()
 {
+    curl_global_init(CURL_GLOBAL_ALL);
     const auto input=read_input(cin,true);
     const auto bins=make_histigram(input);
     show_histogram_svg(bins);
