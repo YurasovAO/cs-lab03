@@ -17,17 +17,27 @@ vector<double>input_numbers(istream& in,size_t count)
 }
 
 
-Input read_input(istream& in)
+Input read_input(istream& in,bool prompt)
 {
     Input data;
+    if(prompt)
+    {
+        cerr << "Enter number count: ";
+    }
 
-    cerr << "Enter number count: ";
     size_t number_count;
     in >> number_count;
-
-    cerr << "Enter numbers: ";
+    if (prompt)
+    {
+        cerr << "Enter numbers: ";
+    }
     data.numbers = input_numbers(in, number_count);
-    cerr<<"bin count:";
+    if(prompt)
+    {
+        cerr<<"bin count:";
+
+    }
+
     in>>data.bin_count;
 
     return data;
@@ -51,7 +61,8 @@ vector <size_t> make_histigram(double max,double min,size_t bin_count,const vect
 
 
 vector <size_t>  make_histigram(Input input)
-{  double min;
+{
+    double min;
     double max;
     find_minmax(input.numbers,min,max);
     vector <size_t> result(input.bin_count);
@@ -70,7 +81,7 @@ vector <size_t>  make_histigram(Input input)
 
 int main()
 {
-    const auto input=read_input(cin);
+    const auto input=read_input(cin,true);
     const auto bins=make_histigram(input);
     show_histogram_svg(bins);
     return 0;
