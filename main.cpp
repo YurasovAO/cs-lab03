@@ -72,7 +72,7 @@ download(const string& address) {
 
 
 
-vector <size_t> make_histigram(Input input);
+vector <size_t> make_histogram(Input input);
 
 
 
@@ -86,7 +86,7 @@ vector <size_t> make_histigram(Input input);
 
 
 
-vector <size_t>  make_histigram(Input input)
+vector <size_t>  make_histogram(Input input)
 {
     double min;
     double max;
@@ -113,7 +113,7 @@ int main(int argc, char* argv[])
     else{
         input = read_input(cin,true);
     }
-    const auto bins = make_histigram(input);
+    const auto bins = make_histogram(input);
     show_histogram_svg(bins);
     return 0;
 }
