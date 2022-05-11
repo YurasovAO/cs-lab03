@@ -27,12 +27,18 @@ Input read_input(istream& in,bool prompt)
     if(prompt)
     {
         cerr << "Enter number count: ";
-        in >> number_count;
-        cerr << "Enter numbers: ";
-        data.numbers = input_numbers(in, number_count);
-        cerr<<"bin count:";
-         in>>data.bin_count;
     }
+     in >> number_count;
+     if(prompt)
+     {
+         cerr << "Enter numbers: ";
+     }
+    data.numbers = input_numbers(in, number_count);
+    if(prompt)
+    {
+       cerr<<"bin count:";
+    }
+    in>>data.bin_count;
 
     return data;
 }
@@ -59,11 +65,12 @@ download(const string& address) {
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
         res = curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-        if (!CURLE_OK){
+        if (res!=CURLE_OK){
             cerr<<curl_easy_strerror(res);
             exit(1);
         }
+        curl_easy_cleanup(curl);
+
     }
 
     return read_input(buffer, false);
@@ -109,6 +116,7 @@ int main(int argc, char* argv[])
 {     Input input;
     if (argc>1){
         input = download(argv[1]);
+
     }
     else{
         input = read_input(cin,true);
