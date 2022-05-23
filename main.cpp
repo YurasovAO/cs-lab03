@@ -69,6 +69,13 @@ download(const string& address) {
             cerr<<curl_easy_strerror(res);
             exit(1);
         }
+        curl_version_info_data * ver=curl_version_info(CURLVERSION_NOW);
+        size_t i=0;
+        while(((ver->protocols[i])))
+        {
+          cerr<<((ver->protocols[i]))<<endl;
+          i++;
+        }
         curl_easy_cleanup(curl);
 
     }
@@ -110,6 +117,8 @@ vector <size_t>  make_histogram(Input input)
     }
     return result;
 }
+
+
 
 
 int main(int argc, char* argv[])
