@@ -122,8 +122,7 @@ vector <size_t>  make_histogram(Input input)
 
 
 int main(int argc, char* argv[])
-{     printf("n = %08x\n", 0x1234567);
-      return(0);
+{
 
     Input input;
     if (argc>1){
