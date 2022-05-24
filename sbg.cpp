@@ -27,7 +27,7 @@
     {
         cout<< "<rect x='" << x << "' y='"<<y<<"' " "width='" <<width<< "' " "height='" <<height << "' " "stroke='" << stroke << "' " "fill='" << fill << "' />";
     }
-    void show_histogram_svg(const vector<size_t>& bins, size_t bin_count, string stroke,size_t &X1, size_t &X2 ,size_t &hist_hight, size_t &s ,size_t wid)
+    void show_histogram_svg(const vector<size_t>& bins)
     {
 
         const auto IMAGE_WIDTH = 400;
@@ -51,7 +51,7 @@
         }
         max_bin_width=max_count*BLOCK_WIDTH;
         double top = 5;
-        X1=TEXT_LEFT-3;
+
         const bool scaling_needed= max_bin_width>MAX_ASTERISK;
         svg_begin(IMAGE_WIDTH,IMAGE_HEIGHT);
 
@@ -62,39 +62,19 @@
             if(scaling_needed)
             {
                 const double scalling_factor=(double)MAX_ASTERISK/( max_bin_width);
-                bin_width=(size_t)(bin*scalling_factor*BLOCK_WIDTH-3-wid);
+                bin_width=(size_t)(bin*scalling_factor*BLOCK_WIDTH-3);
             }
 
             svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
             svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT,"red");
             top += BIN_HEIGHT;
         }
-        if(scaling_needed)
-            {
-                const double scalling_factor=(double)MAX_ASTERISK/( max_bin_width);
-                max_bin_width=(size_t)(max_bin_width*scalling_factor-3-wid);
-                X2=max_bin_width+53+wid-1;
-            }
-        else
-        {
-            X2=max_bin_width+53+wid;
-        }
+        svg_end();
 
-          hist_hight=bin_count*BIN_HEIGHT+9;
     }
 
 
-    void svg_line2(size_t X1,size_t Y1,size_t X2,size_t Y2,string stroke,size_t wid,ostream &stream)
-    {
-
-      stream<<"<line x1='"<<X1<<"' y1='"<<Y1<<"' x2='"<<X2<<"' y2='"<<Y2<<"' stroke='"<<stroke<<"' stroke-width='"<<wid<<"' stroke-dasharray = '10 10' />";
 
 
-
-   }
-   void fin()
-   {
-       svg_end();
-   }
 
 
