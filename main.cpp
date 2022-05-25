@@ -5,6 +5,8 @@
 #include <curl/curl.h>
 #include <sstream>
 #include <string>
+#include <windows.h>
+
 using namespace std;
 
 vector<double>input_numbers(size_t count);
@@ -125,8 +127,7 @@ int main(int argc, char* argv[])
 {     Input input;
     if (argc>1){
         input = download(argv[1]);
-
-    }
+}
     else{
         input = read_input(cin,true);
     }
