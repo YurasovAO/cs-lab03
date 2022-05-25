@@ -5,6 +5,7 @@
 #include <curl/curl.h>
 #include <sstream>
 #include <string>
+#include <windows.h>
 using namespace std;
 
 vector<double>input_numbers(size_t count);
@@ -122,17 +123,15 @@ vector <size_t>  make_histogram(Input input)
 
 
 int main(int argc, char* argv[])
-{
-
-    Input input;
-    if (argc>1){
+{Input input;
+   if (argc>1){
         input = download(argv[1]);
 
     }
     else{
-        input = read_input(cin,true);
+       input = read_input(cin,true);
     }
-    const auto bins = make_histogram(input);
+   const auto bins = make_histogram(input);
     show_histogram_svg(bins);
     return 0;
 }
